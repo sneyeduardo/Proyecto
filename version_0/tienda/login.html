@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construguía - Iniciar sesión</title>
+
+    <!-- Fuentes e íconos del tema -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap4/css/bootstrap.min.css">
+
+    <!-- Estilos base de Martfury + estilos modulares del login -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-custom.css">
+</head>
+
+<body>
+    <div class="ps-my-account ps-login-wrapper">
+        <div class="container">
+            <div class="ps-form--account ps-tab-root ps-login-box">
+
+                <!-- Logo superior -->
+                <div class="ps-login-logo">
+                    <a href="index.html">
+                        <img src="img/logo_light.png" alt="Construguía" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="ps-login-logo__fallback">CONSTRU<span>GUÍA</span></span>
+                    </a>
+                </div>
+
+                <!-- Pestañas principales -->
+                <ul class="ps-tab-list" id="auth-tabs">
+                    <li class="active"><a href="#sign-in" data-tab="sign-in">Iniciar sesión</a></li>
+                    <li><a href="#register" data-tab="register">Registrarse</a></li>
+                </ul>
+
+                <div class="ps-tabs">
+
+                    <!-- ==================== LOGIN ==================== -->
+                    <div class="ps-tab active" id="sign-in">
+                        <form id="form-login" novalidate>
+                            <div class="ps-form__content">
+                                <h5>Ingresa a tu cuenta</h5>
+
+                                <div class="form-group">
+                                    <label for="login-email">Correo electrónico o usuario</label>
+                                    <input id="login-email" class="form-control" type="email" placeholder="ejemplo@correo.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="login-password">Contraseña</label>
+                                    <div class="ps-password-field">
+                                        <input id="login-password" class="form-control" type="password" placeholder="Ingresa tu contraseña" required>
+                                        <button type="button" class="ps-toggle-password" data-target="login-password" aria-label="Mostrar u ocultar contraseña">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="ps-login-options">
+                                    <div class="ps-checkbox">
+                                        <input class="form-control" type="checkbox" id="remember-me" name="remember-me">
+                                        <label for="remember-me">Recuérdame</label>
+                                    </div>
+                                    <a href="#forgot-password" class="ps-forgot-link" data-tab="forgot-password">¿Se te olvidó la contraseña?</a>
+                                </div>
+
+                                <div class="form-group submit mt-25">
+                                    <button type="submit" class="ps-btn ps-btn--fullwidth">Iniciar sesión</button>
+                                </div>
+                            </div>
+
+                            <div class="ps-form__footer ps-login-footer">
+                                <p>¿No tienes cuenta todavía? <a href="#register" class="ps-switch-link" data-tab="register">Regístrate aquí</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- ==================== REGISTRO ==================== -->
+                    <div class="ps-tab" id="register">
+                        <form id="form-register" novalidate>
+                            <div class="ps-form__content">
+                                <h5>Crea una cuenta nueva</h5>
+
+                                <div class="form-group">
+                                    <label for="reg-name">Nombre completo</label>
+                                    <input id="reg-name" class="form-control" type="text" placeholder="Tu nombre y apellido" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reg-email">Correo electrónico</label>
+                                    <input id="reg-email" class="form-control" type="email" placeholder="ejemplo@correo.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reg-password">Contraseña</label>
+                                    <div class="ps-password-field">
+                                        <input id="reg-password" class="form-control" type="password" placeholder="Mínimo 8 caracteres" required>
+                                        <button type="button" class="ps-toggle-password" data-target="reg-password" aria-label="Mostrar u ocultar contraseña">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reg-password-confirm">Confirmar contraseña</label>
+                                    <div class="ps-password-field">
+                                        <input id="reg-password-confirm" class="form-control" type="password" placeholder="Repite tu contraseña" required>
+                                        <button type="button" class="ps-toggle-password" data-target="reg-password-confirm" aria-label="Mostrar u ocultar contraseña">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group submit mt-25">
+                                    <button type="submit" class="ps-btn ps-btn--fullwidth">Crear cuenta</button>
+                                </div>
+                            </div>
+
+                            <div class="ps-form__footer ps-login-footer">
+                                <p>¿Ya tienes una cuenta? <a href="#sign-in" class="ps-switch-link" data-tab="sign-in">Inicia sesión</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- ==================== RECUPERAR CONTRASEÑA ==================== -->
+                    <div class="ps-tab" id="forgot-password">
+                        <form id="form-forgot" novalidate>
+                            <div class="ps-form__content">
+                                <h5>Recuperar contraseña</h5>
+                                <p class="ps-forgot-desc">Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+
+                                <div class="form-group">
+                                    <label for="forgot-email">Correo electrónico</label>
+                                    <input id="forgot-email" class="form-control" type="email" placeholder="ejemplo@correo.com" required>
+                                </div>
+
+                                <div class="form-group submit mt-25">
+                                    <button type="submit" class="ps-btn ps-btn--fullwidth">Enviar enlace</button>
+                                </div>
+                            </div>
+
+                            <div class="ps-form__footer ps-login-footer">
+                                <p><a href="#sign-in" class="ps-switch-link" data-tab="sign-in"><i class="fa fa-angle-left mr-5"></i> Volver a iniciar sesión</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- Mensaje visual de prueba (sin backend) -->
+                <div id="auth-feedback" class="ps-auth-feedback" role="alert" aria-live="polite"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

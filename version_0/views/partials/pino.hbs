@@ -1,0 +1,76 @@
+<div class="cg-ai-widget" id="cg-ai-widget">
+
+    <button type="button" class="cg-ai-toggle" id="cg-ai-toggle" aria-label="Abrir asistente Pino IA">
+        <span class="cg-ai-toggle__avatar">
+            <img src="/img/pino-avatar.jpg" alt="Foto Pino" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <span class="cg-ai-toggle__avatar-fallback"><i class="fa fa-user"></i></span>
+            <span class="cg-ai-toggle__dot"></span>
+        </span>
+        <span class="cg-ai-toggle__text">¿Cómo puedo ayudarte hoy?</span>
+    </button>
+
+    <div class="cg-ai-chat" id="cg-ai-chat" hidden>
+        <div class="cg-ai-chat__header">
+            <div class="cg-ai-chat__profile">
+                <div class="cg-ai-chat__avatar">
+                    <img src="/img/pino-avatar.jpg" alt="Pino IA" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <span class="cg-ai-chat__avatar-fallback"><i class="fa fa-user"></i></span>
+                    <span class="cg-ai-chat__status-dot"></span>
+                </div>
+                <div class="cg-ai-chat__meta">
+                    <h3>Pino <span>• Asistente IA</span></h3>
+                </div>
+            </div>
+            <button type="button" class="cg-ai-chat__close" id="cg-ai-close" aria-label="Cerrar chat">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+
+        <div class="cg-ai-chat__messages" id="cg-ai-messages">
+            <div class="cg-msg cg-msg--user">
+                <div class="cg-msg__text">
+                    Hola Pino, ¿dónde consigo cemento al mayor en Caracas?
+                </div>
+            </div>
+
+            <div class="cg-msg cg-msg--bot">
+                <div class="cg-msg__avatar">
+                    <img src="/img/pino-avatar.jpg" alt="P" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <span class="cg-ai-chat__avatar-fallback"><i class="fa fa-user"></i></span>
+                </div>
+                <div class="cg-msg__content">
+                    <div class="cg-msg__text">
+                        ¡Hola! Claro, tengo excelentes opciones de suscriptores en Caracas. He consultado nuestro algoritmo y te recomiendo revisar las fichas de <strong>'Ferretería Central Caracas'</strong> y <strong>'Aceros Orinoco C.A.'</strong> para las mejores cotizaciones. ¿Te gustaría que te muestre sus productos?
+                    </div>
+                </div>
+            </div>
+
+            <div class="cg-msg cg-msg--bot cg-msg--typing" id="cg-ai-typing" hidden>
+                <div class="cg-msg__avatar">
+                    <span class="cg-ai-chat__avatar-fallback"><i class="fa fa-user"></i></span>
+                </div>
+                <div class="cg-msg__content">
+                    <div class="cg-msg__text">
+                        <span class="cg-typing-dots"><span></span><span></span><span></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cg-ai-chat__quick" id="cg-ai-quick-chips">
+            <button type="button" class="cg-chip" data-ai-intent="suscriptores">Ver Suscriptores</button>
+            <button type="button" class="cg-chip" data-ai-intent="cotizacion">Obtener Cotización</button>
+            <button type="button" class="cg-chip" data-ai-intent="catalogo">Ver Catálogo</button>
+        </div>
+
+        <div class="cg-ai-chat__input-area">
+            <form id="cg-ai-form" class="cg-ai-chat__form">
+                <input type="text" id="cg-ai-input" placeholder="Escribe tu consulta..." aria-label="Escribe tu consulta">
+                <div class="cg-ai-chat__form-actions">
+                    <button type="button" class="cg-ai-btn-mic" aria-label="Mensaje de voz"><i class="fa fa-microphone"></i></button>
+                    <button type="submit" class="cg-ai-btn-send" aria-label="Enviar"><i class="fa fa-paper-plane"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

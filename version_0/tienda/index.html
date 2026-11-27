@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruGuía - La Guía de la Construcción en Venezuela</title>
+
+    <!-- Fuentes e íconos del tema -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap4/css/bootstrap.min.css">
+
+    <!-- Estilos modulares de ConstruGuía -->
+    <link rel="stylesheet" href="css/construguia-theme.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER SUPERIOR ==================== -->
+    <header class="cg-header">
+        <div class="cg-header__top">
+            <div class="cg-container cg-header__top-inner">
+
+                <!-- Logo ConstruGuía -->
+                <a href="index.html" class="cg-logo" aria-label="ConstruGuía Inicio">
+                    <span class="cg-logo__mark">
+                        <svg viewBox="0 0 46 38" width="44" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 5C11.6 5 4 11.3 4 19C4 26.7 11.6 33 21 33C29.1 33 35.9 28.1 37.5 21.5H20V15.5H43.5C43.8 16.6 44 17.8 44 19C44 29.5 33.7 38 21 38C8.3 38 0 29.5 0 19C0 8.5 8.3 0 21 0C29.4 0 36.7 3.7 40.7 9.4L34.3 12.6C31.5 8.1 26.6 5 21 5Z" fill="#070B57"/>
+                            <path d="M22 15.5H43.5L41.5 21.5H22V15.5Z" fill="#E61919"/>
+                        </svg>
+                    </span>
+                    <span class="cg-logo__text">
+                        <span class="cg-logo__title"><strong>constru</strong><em>guía</em></span>
+                        <small class="cg-logo__subtitle">LA GUÍA DE LA CONSTRUCCIÓN EN VENEZUELA</small>
+                    </span>
+                </a>
+
+                <!-- Buscador principal -->
+                <form class="cg-search" id="cg-search-form">
+                    <select class="cg-search__select" id="cg-search-scope" aria-label="Categoría de búsqueda">
+                        <option value="">Todo</option>
+                        <option value="materiales">Materiales</option>
+                        <option value="ferreteria">Ferretería</option>
+                        <option value="maquinaria">Maquinaria</option>
+                        <option value="acabados">Acabados</option>
+                    </select>
+                    <input type="text" class="cg-search__input" id="cg-search-input" placeholder="Buscar en ConstruGuía...">
+                    <button type="submit" class="cg-search__btn">Buscar</button>
+                </form>
+
+                <!-- Acciones de usuario -->
+                <div class="cg-header__actions">
+                    <a href="#" class="cg-action-item" title="Notificaciones">
+                        <span class="cg-action-icon">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="cg-badge-count cg-badge-count--red">2</span>
+                        </span>
+                        <span class="cg-action-label">Notificaciones</span>
+                    </a>
+                    <a href="#" class="cg-action-item" title="Comparar">
+                        <span class="cg-action-icon">
+                            <i class="fa fa-bar-chart"></i>
+                            <span class="cg-badge-count">0</span>
+                        </span>
+                        <span class="cg-action-label">Comparar</span>
+                    </a>
+                    <a href="#" class="cg-action-item" title="Favoritos">
+                        <span class="cg-action-icon">
+                            <i class="fa fa-heart-o"></i>
+                            <span class="cg-badge-count">3</span>
+                        </span>
+                        <span class="cg-action-label">Favoritos</span>
+                    </a>
+                    <a href="shopping-cart.html" class="cg-action-item" title="Carrito">
+                        <span class="cg-action-icon">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="cg-badge-count cg-badge-count--red">2</span>
+                        </span>
+                        <span class="cg-action-label">Carrito</span>
+                    </a>
+                    <a href="login.html" class="cg-action-auth">
+                        <i class="fa fa-user-o"></i>
+                        <span>Ingresar /<br>Registrarse</span>
+                    </a>
+
+                    <button type="button" class="cg-mobile-toggle" id="cg-mobile-toggle" aria-label="Abrir menú">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
+        <nav class="cg-nav" id="cg-nav">
+            <div class="cg-container cg-nav__inner">
+                <div class="cg-nav__left">
+                    <div class="cg-dept-dropdown">
+                        <button type="button" class="cg-dept-btn">
+                            <i class="fa fa-bars"></i>
+                            <span>Buscar por Categoría</span>
+                        </button>
+                        <ul class="cg-dept-menu">
+                            <li><a href="#" data-quick-cat="materiales"><i class="fa fa-cubes"></i> Productos y Materiales</a></li>
+                            <li><a href="#" data-quick-cat="ferreteria"><i class="fa fa-wrench"></i> Ferretería y EPP</a></li>
+                            <li><a href="#" data-quick-cat="maquinaria"><i class="fa fa-cogs"></i> Alquiler de Maquinaria</a></li>
+                            <li><a href="#" data-quick-cat="acabados"><i class="fa fa-paint-brush"></i> Acabados y Sanitarios</a></li>
+                            <li><a href="#" data-quick-cat=""><i class="fa fa-th-large"></i> Ver todo el catálogo</a></li>
+                        </ul>
+                    </div>
+
+                    <ul class="cg-nav__links">
+                        <li><a href="index.html" class="active">Inicio</a></li>
+                        <li class="cg-has-submenu">
+                            <a href="#">Directorio <i class="fa fa-angle-down"></i></a>
+                            <ul class="cg-submenu">
+                                <li><a href="#">Proveedores Verificados</a></li>
+                                <li><a href="#">Ingenieros y Contratistas</a></li>
+                                <li><a href="#">Ferreterías y Mayoristas</a></li>
+                            </ul>
+                        </li>
+                        <li class="cg-has-submenu">
+                            <a href="#">Páginas <i class="fa fa-angle-down"></i></a>
+                            <ul class="cg-submenu">
+                                <li><a href="about-us.html">Nosotros</a></li>
+                                <li><a href="contact-us.html">Contacto</a></li>
+                                <li><a href="faqs.html">Preguntas Frecuentes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog-grid.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="cg-nav__right">
+                    <a href="become-a-vendor.html">Vende en ConstruGuía</a>
+                    <span class="cg-sep">|</span>
+                    <a href="order-tracking.html">Rastrea tu pedido</a>
+                    <span class="cg-sep">|</span>
+                    <span class="cg-nav__meta">Bolívar (VES)</span>
+                    <span class="cg-sep">|</span>
+                    <a href="#" class="cg-nav__lang">Español <i class="fa fa-angle-down"></i></a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ==================== BARRA DE FILTROS AVANZADOS ==================== -->
+        <div class="cg-filter-bar">
+            <div class="cg-container">
+                <form class="cg-filter-form" id="cg-filter-form">
+                    <select class="cg-filter-select" id="filter-categoria" aria-label="Categoría">
+                        <option value="">Categoría</option>
+                        <option value="materiales">Materiales y Obra Gris</option>
+                        <option value="ferreteria">Ferretería y Herramientas</option>
+                        <option value="maquinaria">Maquinaria y Andamios</option>
+                        <option value="acabados">Acabados y Plomería</option>
+                    </select>
+
+                    <select class="cg-filter-select" id="filter-subcategoria" aria-label="Subcategoría">
+                        <option value="">Subcategoría</option>
+                        <option value="cemento-bloques">Cemento y Bloques</option>
+                        <option value="acero">Acero y Cabillas</option>
+                        <option value="electricidad">Electricidad y Tuberías</option>
+                        <option value="herramientas">Herramientas y Equipos</option>
+                        <option value="pintura-acabados">Pintura, Sanitarios y Drywall</option>
+                    </select>
+
+                    <select class="cg-filter-select" id="filter-ciudad" aria-label="Ciudad">
+                        <option value="">Ciudad</option>
+                        <option value="caracas">Caracas</option>
+                        <option value="valencia">Valencia</option>
+                        <option value="maracaibo">Maracaibo</option>
+                        <option value="puerto-ordaz">Puerto Ordaz</option>
+                        <option value="merida">Mérida</option>
+                    </select>
+
+                    <select class="cg-filter-select" id="filter-municipio" aria-label="Municipio">
+                        <option value="">Municipio</option>
+                        <option value="sucre">Sucre</option>
+                        <option value="chacao">Chacao</option>
+                        <option value="baruta">Baruta</option>
+                        <option value="libertador">Libertador</option>
+                        <option value="caroni">Caroní</option>
+                    </select>
+
+                    <select class="cg-filter-select" id="filter-precio" aria-label="Precio">
+                        <option value="">Precio</option>
+                        <option value="0-25">Hasta $25</option>
+                        <option value="25-100">$25 a $100</option>
+                        <option value="100-9999">Más de $100</option>
+                    </select>
+
+                    <div class="cg-filter-actions">
+                        <button type="submit" class="cg-btn-filter">
+                            <i class="fa fa-filter"></i> Aplicar Filtros
+                        </button>
+                        <button type="button" class="cg-btn-clear" id="btn-clear-filters">
+                            <i class="fa fa-trash-o"></i> Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main class="cg-main">
+        <div class="cg-container">
+
+            <!-- BANNER HERO PUBLICIDAD (CON BOTÓN COTIZAR) -->
+            <section class="cg-hero">
+                <img src="img/banner-acero.jpg" alt="Acero Estructural de Alta Resistencia" class="cg-hero__bg">
+                <div class="cg-hero__overlay"></div>
+                <div class="cg-hero__content">
+                    <span class="cg-hero__badge">PUBLICIDAD - ANUNCIANTE VERIFICADO</span>
+                    <h1>ACERO ESTRUCTURAL<br>DE ALTA RESISTENCIA</h1>
+                    <p class="cg-hero__company">ACEROS Y ESTRUCTURAS METÁLICAS ORINOCO</p>
+                    <p class="cg-hero__desc">Despacho directo a obra y cotizaciones al mayor para proyectos de ingeniería civil en toda Venezuela</p>
+                    <a href="#" class="cg-hero__cta" aria-label="Cotizar ahora">COTIZAR AHORA <i class="fa fa-angle-right"></i></a>
+                </div>
+            </section>
+
+            <!-- 6 CATEGORÍAS RÁPIDAS -->
+            <section class="cg-quick-pills" aria-label="Accesos rápidos">
+                <button type="button" class="cg-pill active" data-quick-cat="">Productos y Materiales</button>
+                <button type="button" class="cg-pill" data-quick-cat="servicios">Servicios e Ingeniería</button>
+                <button type="button" class="cg-pill" data-quick-cat="maquinaria">Alquiler de Maquinaria</button>
+                <button type="button" class="cg-pill" data-quick-cat="ferreteria">Ferretería y EPP</button>
+                <button type="button" class="cg-pill" data-quick-cat="solicita">Solicita lo que Necesitas</button>
+                <button type="button" class="cg-pill" data-quick-cat="verificado">Directorio Verificado</button>
+            </section>
+
+            <!-- PRODUCTOS TENDENCIA -->
+            <section class="cg-trending">
+                <div class="cg-section-header">
+                    <div>
+                        <h2>Productos Tendencia</h2>
+                        <p>Recomendados por el Algoritmo y Suscriptores</p>
+                    </div>
+                    <a href="shop-default.html" class="cg-view-all" id="cg-view-all">Ver todos</a>
+                </div>
+
+                <!-- Mensaje cuando un filtro no arroja resultados -->
+                <div id="cg-empty-state" class="cg-empty-state" hidden>
+                    <i class="fa fa-search"></i>
+                    <p>No encontramos productos con esos filtros. Prueba limpiar la búsqueda.</p>
+                </div>
+
+                <!-- Grilla de productos -->
+                <div class="cg-product-grid" id="cg-product-grid">
+
+                    <!-- 1 -->
+                    <article class="cg-product-card" data-categoria="materiales" data-subcategoria="cemento-bloques" data-ciudad="caracas" data-municipio="libertador" data-precio="7.5" data-verificado="false">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/cemento-portland.jpg" alt="Cemento Portland Gris" data-icon="fa-cubes">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Cemento Portland Gris</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-trend">Tendencia</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <em>(4.9)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$7.50 / Bs. 340</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Ferretería Central Caracas</p>
+                            <p class="cg-product-card__shipping">Envío a obra / disponible al mayor</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 2 -->
+                    <article class="cg-product-card" data-categoria="materiales" data-subcategoria="acero" data-ciudad="puerto-ordaz" data-municipio="caroni" data-precio="120" data-verificado="false">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/cabillas-acero.jpg" alt="Cabillas de Acero de 1/2 pulgada" data-icon="fa-bars">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Cabillas de Acero de 1/2 pulgada</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-trend">Tendencia</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <em>(4.8)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$120.00 / Bs. 5.400</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Aceros Orinoco C.A.</p>
+                            <p class="cg-product-card__shipping">Envío a obra / disponible al mayor</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 3 -->
+                    <article class="cg-product-card" data-categoria="ferreteria" data-subcategoria="herramientas" data-ciudad="caracas" data-municipio="chacao" data-precio="85" data-verificado="false">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/taladro-20v.jpg" alt="Taladro Percutor 20V" data-icon="fa-wrench">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Taladro Percutor 20V</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-trend">Tendencia</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i> <em>(4.7)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$85.00 / Bs. 3.820</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Ferretería Industrial</p>
+                            <p class="cg-product-card__shipping">Retiro en tienda</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 4 -->
+                    <article class="cg-product-card" data-categoria="materiales" data-subcategoria="cemento-bloques" data-ciudad="caracas" data-municipio="sucre" data-precio="0.45" data-verificado="true">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/bloques-arcilla.jpg" alt="Bloques de Arcilla 15cm" data-icon="fa-th">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Bloques de Arcilla 15cm</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-verified"><i class="fa fa-check-circle"></i> Verificado</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i> <em>(4.6)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$0.45 / Bs. 20 (c/u)</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Bloquera El Marqués</p>
+                            <p class="cg-product-card__shipping">Envío a obra / disponible al mayor</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 5 -->
+                    <article class="cg-product-card" data-categoria="ferreteria" data-subcategoria="electricidad" data-ciudad="valencia" data-municipio="libertador" data-precio="32" data-verificado="false">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/cable-12awg.jpg" alt="Cable Eléctrico Nro 12 AWG" data-icon="fa-bolt">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Cable Eléctrico Nro 12 AWG</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-trend">Tendencia</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <em>(4.8)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$32.00 / Bs. 1.440</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> ElectroHogar Valencia</p>
+                            <p class="cg-product-card__shipping">Envío gratis</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 6 -->
+                    <article class="cg-product-card" data-categoria="acabados" data-subcategoria="electricidad" data-ciudad="valencia" data-municipio="libertador" data-precio="3.5" data-verificado="true">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/tubos-pvc.jpg" alt="Tubos de PVC de 1/2 pulgada (Aguas Blancas)" data-icon="fa-sliders">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Tubos de PVC de 1/2 pulgada (Aguas Blancas)</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-verified"><i class="fa fa-check-circle"></i> Verificado</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i> <em>(4.5)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$3.50 / Bs. 158</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Hidráulica del Centro</p>
+                            <p class="cg-product-card__shipping">Envío a obra / disponible al mayor</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 7 -->
+                    <article class="cg-product-card" data-categoria="acabados" data-subcategoria="pintura-acabados" data-ciudad="merida" data-municipio="libertador" data-precio="45" data-verificado="false">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/pintura-caucho.jpg" alt="Pintura Caucho Interior Blanca (4Gal)" data-icon="fa-paint-brush">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Pintura Caucho Interior Blanca (4Gal)</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-trend">Tendencia</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i> <em>(4.7)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$45.00 / Bs. 2.025</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Pinturas Andes</p>
+                            <p class="cg-product-card__shipping">Envío gratis</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 8 -->
+                    <article class="cg-product-card" data-categoria="materiales" data-subcategoria="electricidad" data-ciudad="caracas" data-municipio="baruta" data-precio="135" data-verificado="true">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/tanque-agua.jpg" alt="Tanque de Agua 1500L Cilíndrico" data-icon="fa-tint">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Tanque de Agua 1500L Cilíndrico</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-verified"><i class="fa fa-check-circle"></i> Verificado</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <em>(4.9)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$135.00 / Bs. 6.075</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Plásticos Industriales</p>
+                            <p class="cg-product-card__shipping">Envío a obra</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 9 -->
+                    <article class="cg-product-card" data-categoria="maquinaria" data-subcategoria="herramientas" data-ciudad="maracaibo" data-municipio="libertador" data-precio="90" data-verificado="false">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/andamio-metalico.jpg" alt="Andamio Metálico Completo" data-icon="fa-building-o">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Andamio Metálico Completo</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-trend">Tendencia</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <em>(4.8)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$90.00 / Bs. 4.050</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Maquinaria y Andamios Zulia</p>
+                            <p class="cg-product-card__shipping">Envío a obra / disponible al mayor</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 10 -->
+                    <article class="cg-product-card" data-categoria="acabados" data-subcategoria="pintura-acabados" data-ciudad="caracas" data-municipio="chacao" data-precio="110" data-verificado="true">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/inodoro-blanco.jpg" alt="Inodoro de Una Pieza Blanco" data-icon="fa-bath">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Inodoro de Una Pieza Blanco</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-verified"><i class="fa fa-check-circle"></i> Verificado</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i> <em>(4.6)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$110.00 / Bs. 4.950</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Cerámicas y Sanitarios</p>
+                            <p class="cg-product-card__shipping">Retiro en tienda</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 11 -->
+                    <article class="cg-product-card" data-categoria="materiales" data-subcategoria="pintura-acabados" data-ciudad="caracas" data-municipio="baruta" data-precio="28" data-verificado="false">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/impermeabilizante.jpg" alt="Impermeabilizante Asfáltico (Cuñete)" data-icon="fa-shield">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Impermeabilizante Asfáltico (Cuñete)</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-trend">Tendencia</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i> <em>(4.7)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$28.00 / Bs. 1.260</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Soluciones Constructivas</p>
+                            <p class="cg-product-card__shipping">Envío gratis</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                    <!-- 12 -->
+                    <article class="cg-product-card" data-categoria="acabados" data-subcategoria="pintura-acabados" data-ciudad="caracas" data-municipio="sucre" data-precio="14" data-verificado="true">
+                        <div class="cg-product-card__img">
+                            <img src="img/productos/drywall-lamina.jpg" alt="Tabiquería Drywall (Lámina 1/2 pulgada)" data-icon="fa-clone">
+                        </div>
+                        <div class="cg-product-card__body">
+                            <h3 class="cg-product-card__title">Tabiquería Drywall (Lámina 1/2 pulgada)</h3>
+                            <div class="cg-product-card__meta">
+                                <span class="cg-tag-verified"><i class="fa fa-check-circle"></i> Verificado</span>
+                                <span class="cg-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <em>(4.8)</em></span>
+                            </div>
+                            <p class="cg-product-card__price">$14.00 / Bs. 630</p>
+                            <p class="cg-product-card__vendor"><i class="fa fa-check-circle"></i> Drywall y Acabados</p>
+                            <p class="cg-product-card__shipping">Envío a obra / disponible al mayor</p>
+                            <a href="product-default.html" class="cg-btn-cta">Cotizar / Ver detalle</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER CORPORATIVO (AZUL MARINO) ==================== -->
+    <footer class="cg-footer">
+
+        <!-- Franja de Boletín -->
+        <div class="cg-newsletter">
+            <div class="cg-container cg-newsletter__inner">
+                <div class="cg-newsletter__info">
+                    <h3>Boletín</h3>
+                    <p>Suscríbete para recibir información sobre productos y cupones</p>
+                </div>
+                <form class="cg-newsletter__form" id="cg-newsletter-form">
+                    <input type="email" id="cg-newsletter-email" placeholder="Correo electrónico" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Cuerpo del Footer -->
+        <div class="cg-footer__body">
+            <div class="cg-container">
+                <div class="cg-footer__grid">
+
+                    <!-- Columna Marca -->
+                    <div class="cg-footer__brand">
+                        <a href="index.html" class="cg-logo cg-logo--white">
+                            <span class="cg-logo__mark">
+                                <svg viewBox="0 0 46 38" width="48" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 5C11.6 5 4 11.3 4 19C4 26.7 11.6 33 21 33C29.1 33 35.9 28.1 37.5 21.5H20V15.5H43.5C43.8 16.6 44 17.8 44 19C44 29.5 33.7 38 21 38C8.3 38 0 29.5 0 19C0 8.5 8.3 0 21 0C29.4 0 36.7 3.7 40.7 9.4L34.3 12.6C31.5 8.1 26.6 5 21 5Z" fill="#FFFFFF"/>
+                                    <path d="M22 15.5H43.5L41.5 21.5H22V15.5Z" fill="#E61919"/>
+                                </svg>
+                            </span>
+                            <span class="cg-logo__text">
+                                <span class="cg-logo__title"><strong>constru</strong><em>guía</em></span>
+                                <small class="cg-logo__subtitle">LA GUÍA DE LA CONSTRUCCIÓN EN VENEZUELA</small>
+                            </span>
+                        </a>
+                        <p class="cg-footer__tagline">Conectamos cada obra con los mejores proveedores e ingenieros de Venezuela.</p>
+                        <ul class="cg-footer__socials">
+                            <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna Contáctanos -->
+                    <div class="cg-footer__col">
+                        <h4>Contáctanos</h4>
+                        <p class="cg-footer__label">Llámanos 24/7</p>
+                        <p class="cg-footer__phone">+58 212 979 769</p>
+                        <p class="cg-footer__address">Caracas, Venezuela<br><a href="mailto:contacto@construguia.com">contacto@construguia.com</a></p>
+                        <a href="contact-us.html" class="cg-footer__cta">Contáctanos</a>
+                    </div>
+
+                    <!-- Columna Enlaces rápidos -->
+                    <div class="cg-footer__col">
+                        <h4>Enlaces rápidos</h4>
+                        <ul class="cg-footer__links">
+                            <li><a href="#">Política</a></li>
+                            <li><a href="#">Acuerdo de Confidencialidad</a></li>
+                            <li><a href="#">Políticas de Privacidad</a></li>
+                            <li><a href="#">Envíos</a></li>
+                            <li><a href="#">Devoluciones</a></li>
+                            <li><a href="faqs.html">Preguntas frecuentes</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna Empresa -->
+                    <div class="cg-footer__col">
+                        <h4>Empresa</h4>
+                        <ul class="cg-footer__links">
+                            <li><a href="about-us.html">Nosotros</a></li>
+                            <li><a href="#">Afiliados</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="contact-us.html">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna Negocios -->
+                    <div class="cg-footer__col">
+                        <h4>Negocios</h4>
+                        <ul class="cg-footer__links">
+                            <li><a href="#">Prensa</a></li>
+                            <li><a href="checkout.html">Pago</a></li>
+                            <li><a href="login.html">Mi cuenta</a></li>
+                            <li><a href="shop-default.html">Tienda</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Directorio SEO -->
+                <div class="cg-footer__directory">
+                    <p><strong>Electricidad y Electrónica:</strong> <a href="#">Aire acondicionado</a> <span>|</span> <a href="#">Audio y video</a> <span>|</span> <a href="#">Electrónica automotriz</a> <span>|</span> <a href="#">Electrónica de oficina</a> <span>|</span> <a href="#">Iluminación industrial</a> <span>|</span> <a href="#">Maquinaria</a></p>
+                    <p><strong>Materiales y Herramientas:</strong> <a href="#">Cemento y Agregados</a> <span>|</span> <a href="#">Acero y Cabillas</a> <span>|</span> <a href="#">Bloques y Ladrillos</a> <span>|</span> <a href="#">Pinturas e Impermeabilizantes</a> <span>|</span> <a href="#">Drywall y Techos</a></p>
+                    <p><strong>Hogar y Construcción:</strong> <a href="#">Ferretería</a> <span>|</span> <a href="#">Decoración</a> <span>|</span> <a href="#">Mobiliario</a> <span>|</span> <a href="#">Herramientas de jardín</a> <span>|</span> <a href="#">Equipos pesados</a> <span>|</span> <a href="#">Herramientas manuales</a> <span>|</span> <a href="#">Fontanería</a></p>
+                    <p><strong>Salud y Seguridad:</strong> <a href="#">Seguridad industrial</a> <span>|</span> <a href="#">Equipos de protección (EPP)</a> <span>|</span> <a href="#">Señalización</a></p>
+                </div>
+
+                <!-- Copyright -->
+                <div class="cg-footer__bottom">
+                    <p>&copy; 2026 ConstruGuía. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button type="button" id="cg-back-to-top" class="cg-back-to-top" aria-label="Volver arriba">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- ==================== AGENTE IA: PINO (CHAT FLOTANTE) ==================== -->
+    <div class="cg-ai-widget" id="cg-ai-widget">
+
+        <!-- Botón circular o invitación colapsada -->
+        <button type="button" class="cg-ai-toggle" id="cg-ai-toggle" aria-label="Abrir asistente Pino IA">
+            <span class="cg-ai-toggle__avatar">
+                <!-- Se puede usar fallback o foto cargada si existe img/pino-avatar.jpg -->
+                <img src="img/pino-avatar.jpg" alt="Foto Pino" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <span class="cg-ai-toggle__avatar-fallback"><i class="fa fa-user"></i></span>
+                <span class="cg-ai-toggle__dot"></span>
+            </span>
+            <span class="cg-ai-toggle__text">¿Cómo puedo ayudarte hoy?</span>
+        </button>
+
+        <!-- Ventana de Chat Pino IA -->
+        <div class="cg-ai-chat" id="cg-ai-chat" hidden>
+            
+            <!-- Encabezado del Chat -->
+            <div class="cg-ai-chat__header">
+                <div class="cg-ai-chat__profile">
+                    <div class="cg-ai-chat__avatar">
+                        <img src="img/pino-avatar.jpg" alt="Pino IA" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <span class="cg-ai-chat__avatar-fallback"><i class="fa fa-user"></i></span>
+                        <span class="cg-ai-chat__status-dot"></span>
+                    </div>
+                    <div class="cg-ai-chat__meta">
+                        <h3>Pino <span>• Asistente IA</span></h3>
+                    </div>
+                </div>
+                <button type="button" class="cg-ai-chat__close" id="cg-ai-close" aria-label="Cerrar chat">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Área de Conversación (Scrollable) -->
+            <div class="cg-ai-chat__messages" id="cg-ai-messages">
+                
+                <!-- Burbuja Usuario -->
+                <div class="cg-msg cg-msg--user">
+                    <div class="cg-msg__text">
+                        Hola Pino, ¿dónde consigo cemento al mayor en Caracas?
+                    </div>
+                </div>
+
+                <!-- Burbuja Pino IA -->
+                <div class="cg-msg cg-msg--bot">
+                    <div class="cg-msg__avatar">
+                        <img src="img/pino-avatar.jpg" alt="P" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <span class="cg-ai-chat__avatar-fallback"><i class="fa fa-user"></i></span>
+                    </div>
+                    <div class="cg-msg__content">
+                        <div class="cg-msg__text">
+                            ¡Hola! Claro, tengo excelentes opciones de suscriptores en Caracas. He consultado nuestro algoritmo y te recomiendo revisar las fichas de <strong>'Ferretería Central Caracas'</strong> y <strong>'Aceros Orinoco C.A.'</strong> para las mejores cotizaciones. ¿Te gustaría que te muestre sus productos?
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicador 'Escribiendo...' (Oculto por defecto) -->
+                <div class="cg-msg cg-msg--bot cg-msg--typing" id="cg-ai-typing" hidden>
+                    <div class="cg-msg__avatar">
+                        <span class="cg-ai-chat__avatar-fallback"><i class="fa fa-user"></i></span>
+                    </div>
+                    <div class="cg-msg__content">
+                        <div class="cg-msg__text">
+                            <span class="cg-typing-dots"><span></span><span></span><span></span></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Chips Interactivos (Acciones rápidas) -->
+            <div class="cg-ai-chat__quick" id="cg-ai-quick-chips">
+                <button type="button" class="cg-chip" data-ai-intent="suscriptores">Ver Suscriptores</button>
+                <button type="button" class="cg-chip" data-ai-intent="cotizacion">Obtener Cotización</button>
+                <button type="button" class="cg-chip" data-ai-intent="catalogo">Ver Catálogo</button>
+            </div>
+
+            <!-- Campo de texto e Input -->
+            <div class="cg-ai-chat__input-area">
+                <form id="cg-ai-form" class="cg-ai-chat__form">
+                    <input type="text" id="cg-ai-input" placeholder="Escribe tu consulta..." aria-label="Escribe tu consulta">
+                    <div class="cg-ai-chat__form-actions">
+                        <button type="button" class="cg-ai-btn-mic" aria-label="Mensaje de voz"><i class="fa fa-microphone"></i></button>
+                        <button type="submit" class="cg-ai-btn-send" aria-label="Enviar"><i class="fa fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/construguia-home.js"></script>
+</body>
+
+</html>

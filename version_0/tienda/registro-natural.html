@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruGuía - Registro de Profesional o Técnico</title>
+
+    <!-- Fuentes e íconos del tema -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/plugins/bootstrap4/css/bootstrap.min.css">
+
+    <!-- Estilos base de ConstruGuía + Estilos propios de esta vista -->
+    <link rel="stylesheet" href="/css/construguia-theme.css">
+    <link rel="stylesheet" href="/css/registro-natural.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER SUPERIOR (MISMO DEL LANDING) ==================== -->
+    <header class="cg-header">
+        <div class="cg-header__top">
+            <div class="cg-container cg-header__top-inner">
+                <a href="/" class="cg-logo" aria-label="ConstruGuía Inicio">
+                    <span class="cg-logo__mark">
+                        <svg viewBox="0 0 46 38" width="44" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 5C11.6 5 4 11.3 4 19C4 26.7 11.6 33 21 33C29.1 33 35.9 28.1 37.5 21.5H20V15.5H43.5C43.8 16.6 44 17.8 44 19C44 29.5 33.7 38 21 38C8.3 38 0 29.5 0 19C0 8.5 8.3 0 21 0C29.4 0 36.7 3.7 40.7 9.4L34.3 12.6C31.5 8.1 26.6 5 21 5Z" fill="#070B57"/>
+                            <path d="M22 15.5H43.5L41.5 21.5H22V15.5Z" fill="#E61919"/>
+                        </svg>
+                    </span>
+                    <span class="cg-logo__text">
+                        <span class="cg-logo__title"><strong>constru</strong><em>guía</em></span>
+                        <small class="cg-logo__subtitle">LA GUÍA DE LA CONSTRUCCIÓN EN VENEZUELA</small>
+                    </span>
+                </a>
+
+                <form class="cg-search" action="/" method="get">
+                    <select class="cg-search__select" aria-label="Categoría de búsqueda">
+                        <option value="">Todo</option>
+                        <option value="materiales">Materiales</option>
+                        <option value="ferreteria">Ferretería</option>
+                        <option value="maquinaria">Maquinaria</option>
+                        <option value="acabados">Acabados</option>
+                    </select>
+                    <input type="text" class="cg-search__input" placeholder="Buscar en ConstruGuía...">
+                    <button type="submit" class="cg-search__btn">Buscar</button>
+                </form>
+
+                <div class="cg-header__actions">
+                    <a href="#" class="cg-action-item" title="Notificaciones">
+                        <span class="cg-action-icon">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="cg-badge-count cg-badge-count--red">0</span>
+                        </span>
+                        <span class="cg-action-label">Notificaciones</span>
+                    </a>
+                    <a href="#" class="cg-action-item" title="Comparar">
+                        <span class="cg-action-icon">
+                            <i class="fa fa-bar-chart"></i>
+                            <span class="cg-badge-count">0</span>
+                        </span>
+                        <span class="cg-action-label">Comparar</span>
+                    </a>
+                    <a href="#" class="cg-action-item" title="Favoritos">
+                        <span class="cg-action-icon">
+                            <i class="fa fa-heart-o"></i>
+                            <span class="cg-badge-count">0</span>
+                        </span>
+                        <span class="cg-action-label">Favoritos</span>
+                    </a>
+                    <a href="/shopping-cart.html" class="cg-action-item" title="Carrito">
+                        <span class="cg-action-icon">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="cg-badge-count cg-badge-count--red">0</span>
+                        </span>
+                        <span class="cg-action-label">Carrito</span>
+                    </a>
+                    <a href="/login.html" class="cg-action-auth">
+                        <i class="fa fa-user-o"></i>
+                        <span>Ingresar /<br>Registrarse</span>
+                    </a>
+
+                    <button type="button" class="cg-mobile-toggle" id="cg-mobile-toggle" aria-label="Abrir menú">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="cg-nav" id="cg-nav">
+            <div class="cg-container cg-nav__inner">
+                <div class="cg-nav__left">
+                    <div class="cg-dept-dropdown">
+                        <button type="button" class="cg-dept-btn">
+                            <i class="fa fa-bars"></i>
+                            <span>Buscar por Categoría</span>
+                        </button>
+                        <ul class="cg-dept-menu">
+                            <li><a href="/"><i class="fa fa-cubes"></i> Productos y Materiales</a></li>
+                            <li><a href="/"><i class="fa fa-wrench"></i> Ferretería y EPP</a></li>
+                            <li><a href="/"><i class="fa fa-cogs"></i> Alquiler de Maquinaria</a></li>
+                            <li><a href="/"><i class="fa fa-paint-brush"></i> Acabados y Sanitarios</a></li>
+                        </ul>
+                    </div>
+
+                    <ul class="cg-nav__links">
+                        <li><a href="/">Inicio</a></li>
+                        <li class="cg-has-submenu">
+                            <a href="#" class="active">Directorio <i class="fa fa-angle-down"></i></a>
+                            <ul class="cg-submenu">
+                                <li><a href="/Registro_Natural">Registro Persona Natural</a></li>
+                                <li><a href="#">Proveedores Verificados</a></li>
+                                <li><a href="#">Ingenieros y Contratistas</a></li>
+                            </ul>
+                        </li>
+                        <li class="cg-has-submenu">
+                            <a href="#">Páginas <i class="fa fa-angle-down"></i></a>
+                            <ul class="cg-submenu">
+                                <li><a href="/about-us.html">Nosotros</a></li>
+                                <li><a href="/contact-us.html">Contacto</a></li>
+                                <li><a href="/faqs.html">Preguntas Frecuentes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/blog-grid.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="cg-nav__right">
+                    <a href="/become-a-vendor.html">Vende en ConstruGuía</a>
+                    <span class="cg-sep">|</span>
+                    <a href="/order-tracking.html">Rastrea tu pedido</a>
+                    <span class="cg-sep">|</span>
+                    <span class="cg-nav__meta">Bolívar (VES)</span>
+                    <span class="cg-sep">|</span>
+                    <a href="#" class="cg-nav__lang">Español <i class="fa fa-angle-down"></i></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cg-filter-bar">
+            <div class="cg-container">
+                <form class="cg-filter-form" action="/" method="get">
+                    <select class="cg-filter-select" aria-label="Categoría">
+                        <option value="">Categoría</option>
+                        <option value="materiales">Materiales y Obra Gris</option>
+                        <option value="ferreteria">Ferretería y Herramientas</option>
+                        <option value="maquinaria">Maquinaria y Andamios</option>
+                    </select>
+                    <select class="cg-filter-select" aria-label="Subcategoría">
+                        <option value="">Subcategoría</option>
+                        <option value="cemento">Cemento y Bloques</option>
+                        <option value="acero">Acero y Cabillas</option>
+                    </select>
+                    <select class="cg-filter-select" aria-label="Ciudad">
+                        <option value="">Ciudad</option>
+                        <option value="caracas">Caracas</option>
+                        <option value="valencia">Valencia</option>
+                        <option value="maracaibo">Maracaibo</option>
+                    </select>
+                    <select class="cg-filter-select" aria-label="Municipio">
+                        <option value="">Municipio</option>
+                        <option value="chacao">Chacao</option>
+                        <option value="baruta">Baruta</option>
+                        <option value="sucre">Sucre</option>
+                    </select>
+                    <select class="cg-filter-select" aria-label="Precio">
+                        <option value="">Precio</option>
+                        <option value="0-25">Hasta $25</option>
+                        <option value="25-100">$25 a $100</option>
+                    </select>
+                    <div class="cg-filter-actions">
+                        <button type="submit" class="cg-btn-filter"><i class="fa fa-search"></i> Aplicar Filtros</button>
+                        <button type="reset" class="cg-btn-clear"><i class="fa fa-trash-o"></i> Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== CONTENIDO PRINCIPAL: REGISTRO NATURAL ==================== -->
+    <main class="cg-reg-main">
+        <div class="cg-container">
+
+            <form id="cg-registro-natural-form" novalidate>
+
+                <!-- BARRA DE TÍTULO Y ACCIONES CRUD -->
+                <section class="cg-reg-banner">
+                    <h1 class="cg-reg-banner__title">
+                        Registro de Profesional o Técnico <span>•</span> Persona Natural
+                    </h1>
+                    <div class="cg-reg-banner__actions">
+                        <button type="button" class="cg-act-btn cg-act-btn--white" id="btn-nuevo">Nuevo Registro</button>
+                        <button type="button" class="cg-act-btn cg-act-btn--outline" id="btn-editar">Editar</button>
+                        <button type="button" class="cg-act-btn cg-act-btn--red" id="btn-guardar">Guardar Cambios</button>
+                        <button type="button" class="cg-act-btn cg-act-btn--muted" id="btn-eliminar">Eliminar</button>
+                    </div>
+                </section>
+
+                <!-- ALERTA DE ESTADO DEMO -->
+                <div id="cg-reg-alert" class="cg-reg-alert" role="alert" hidden></div>
+
+                <!-- GRILLA DE 3 COLUMNAS -->
+                <div class="cg-reg-grid">
+
+                    <!-- ==================== COLUMNA 1: IDENTIFICACIÓN Y PERFIL ==================== -->
+                    <section class="cg-reg-card">
+                        <h2 class="cg-reg-card__title">Identificación y Perfil</h2>
+
+                        <div class="cg-ident-top">
+                            <!-- Sub-columna campos izquierda -->
+                            <div class="cg-ident-fields">
+                                <div class="cg-field-row cg-field-row--2">
+                                    <div class="cg-field">
+                                        <label for="tipo-doc">Tipo de Documento <span class="req">*</span></label>
+                                        <select id="tipo-doc" class="cg-input" required>
+                                            <option value="cedula" selected>Cédula</option>
+                                            <option value="pasaporte">Pasaporte</option>
+                                            <option value="dni">DNI</option>
+                                            <option value="rif_natural">RIF / RUC Natural</option>
+                                        </select>
+                                    </div>
+                                    <div class="cg-field">
+                                        <label for="num-doc">Número de Documento <span class="req">*</span></label>
+                                        <input type="text" id="num-doc" class="cg-input" placeholder="V-00.000.000" required>
+                                    </div>
+                                </div>
+
+                                <div class="cg-field">
+                                    <label>Tipo de Perfil</label>
+                                    <div class="cg-segmented" data-segmented="tipo-perfil">
+                                        <button type="button" class="cg-seg-btn active" data-value="Profesional">Profesional</button>
+                                        <button type="button" class="cg-seg-btn" data-value="Técnico">Técnico</button>
+                                    </div>
+                                    <input type="hidden" id="tipo-perfil" value="Profesional">
+                                </div>
+
+                                <div class="cg-field-row cg-field-row--2">
+                                    <div class="cg-field">
+                                        <label for="nombres">Nombres <span class="req">*</span></label>
+                                        <input type="text" id="nombres" class="cg-input" placeholder="Nombres" required>
+                                    </div>
+                                    <div class="cg-field">
+                                        <label for="apellidos">Apellidos <span class="req">*</span></label>
+                                        <input type="text" id="apellidos" class="cg-input" placeholder="Apellidos" required>
+                                    </div>
+                                </div>
+
+                                <div class="cg-field-row cg-field-row--2">
+                                    <div class="cg-field">
+                                        <label for="fecha-nac">Fecha de Nacimiento <span class="req">*</span></label>
+                                        <input type="date" id="fecha-nac" class="cg-input" required>
+                                    </div>
+                                    <div class="cg-field">
+                                        <label for="correo-perfil">Correo Electrónico <span class="req">*</span></label>
+                                        <input type="email" id="correo-perfil" class="cg-input" placeholder="correo@ejemplo.com" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sub-columna Foto de Perfil -->
+                            <div class="cg-photo-col">
+                                <label class="cg-photo-label">Foto de Perfil profesional<br><span>(Opcional)</span></label>
+                                <label class="cg-upload-box cg-upload-box--profile" for="foto-perfil-input">
+                                    <input type="file" id="foto-perfil-input" accept=".jpg,.jpeg,.png" hidden>
+                                    <img id="foto-perfil-preview" class="cg-upload-preview" alt="Vista previa" hidden>
+                                    <div class="cg-upload-placeholder" id="foto-perfil-placeholder">
+                                        <i class="fa fa-camera"></i>
+                                        <span>Subir foto<br>(.jpg, .png)</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Contraseña -->
+                        <div class="cg-field">
+                            <label for="password-natural">Contraseña de acceso <span class="req">*</span></label>
+                            <div class="cg-password-wrap">
+                                <input type="password" id="password-natural" class="cg-input" placeholder="Contraseña segura (mín. 8 caracteres)" required>
+                                <button type="button" class="cg-eye-btn" id="toggle-pass-btn" aria-label="Mostrar u ocultar contraseña">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Teléfonos -->
+                        <div class="cg-field-row cg-field-row--2">
+                            <div class="cg-field">
+                                <label for="tel-movil">Teléfono Móvil <span class="req">*</span></label>
+                                <input type="tel" id="tel-movil" class="cg-input" placeholder="+58 412 000 0000" required>
+                            </div>
+                            <div class="cg-field">
+                                <label for="tel-fijo">Teléfono Fijo</label>
+                                <input type="tel" id="tel-fijo" class="cg-input" placeholder="+58 212 000 0000">
+                            </div>
+                        </div>
+
+                        <!-- Biografía -->
+                        <div class="cg-field cg-field--grow">
+                            <label for="biografia">Biografía / Resumen <span class="req">*</span></label>
+                            <textarea id="biografia" class="cg-input cg-textarea" rows="5" placeholder="Describe tu experiencia en obra, proyectos destacados y servicios que ofreces..." required></textarea>
+                        </div>
+                    </section>
+
+                    <!-- ==================== COLUMNA 2: ESPECIALIDAD Y TRAYECTORIA ==================== -->
+                    <section class="cg-reg-card">
+                        <h2 class="cg-reg-card__title">Especialidad y Trayectoria</h2>
+
+                        <div class="cg-field">
+                            <label for="cat-principal">Categoría principal</label>
+                            <select id="cat-principal" class="cg-input">
+                                <option value="ingenieria-civil">Ingeniería Civil</option>
+                                <option value="arquitectura">Arquitectura y Diseño</option>
+                                <option value="electricidad">Ingeniería Eléctrica / Técnico</option>
+                                <option value="mecanica">Climatización y Mecánica</option>
+                                <option value="obra-gris">Construcción y Obra Gris</option>
+                            </select>
+                        </div>
+
+                        <div class="cg-field-row cg-field-row--2">
+                            <div class="cg-field">
+                                <label for="subesp-1">Subespecialidad 1</label>
+                                <select id="subesp-1" class="cg-input">
+                                    <option value="">Seleccionar...</option>
+                                    <option value="estructuras">Estructuras</option>
+                                    <option value="vialidad">Vialidad</option>
+                                    <option value="hidraulica">Hidráulica</option>
+                                    <option value="acabados">Acabados</option>
+                                </select>
+                            </div>
+                            <div class="cg-field">
+                                <label for="subesp-2">Subespecialidad 2</label>
+                                <select id="subesp-2" class="cg-input">
+                                    <option value="">Seleccionar...</option>
+                                    <option value="calculo">Cálculo Estructural</option>
+                                    <option value="inspeccion">Inspección de Obra</option>
+                                    <option value="presupuestos">Presupuestos y Valuaciones</option>
+                                    <option value="remodelacion">Remodelaciones</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="cg-field">
+                            <label for="profesion-principal">Profesión o Especialidad Principal</label>
+                            <select id="profesion-principal" class="cg-input">
+                                <option value="ing-civil-estructuras" selected>Ingeniero Civil - Estructuras y Cálculo</option>
+                                <option value="arquitecto">Arquitecto - Diseño y Proyectos</option>
+                                <option value="ing-electrico">Ingeniero Eléctrico - Baja y Alta Tensión</option>
+                                <option value="tsu-construccion">TSU en Construcción Civil</option>
+                                <option value="maestro-obra">Maestro de Obra Certificado</option>
+                            </select>
+                        </div>
+
+                        <div class="cg-field">
+                            <label for="anios-exp">Años de experiencia en construcción <span class="req">*</span></label>
+                            <input type="number" id="anios-exp" class="cg-input" min="0" max="60" placeholder="Ej. 8" required>
+                        </div>
+
+                        <div class="cg-field">
+                            <label for="num-civ">ID / Número de colegiatura (CIV/Licencia) <span class="req">*</span></label>
+                            <input type="text" id="num-civ" class="cg-input" placeholder="Ej. CIV 245.890" required>
+                        </div>
+
+                        <div class="cg-field">
+                            <label>Estado de vinculación</label>
+                            <div class="cg-segmented cg-segmented--3" data-segmented="estado-vinculacion">
+                                <button type="button" class="cg-seg-btn active" data-value="Independiente">Independiente</button>
+                                <button type="button" class="cg-seg-btn" data-value="Vinculado a Empresa">Vinculado</button>
+                                <button type="button" class="cg-seg-btn" data-value="Ambos">Ambos</button>
+                            </div>
+                            <input type="hidden" id="estado-vinculacion" value="Independiente">
+                        </div>
+
+                        <div class="cg-field-row cg-field-row--2">
+                            <div class="cg-field">
+                                <input type="text" id="empresa-labora" class="cg-input" placeholder="Empresa donde labora">
+                            </div>
+                            <div class="cg-field">
+                                <input type="text" id="cargo-rol" class="cg-input" placeholder="Cargo o Rol">
+                            </div>
+                        </div>
+
+                        <div class="cg-field-row cg-field-row--2 cg-align-center">
+                            <div class="cg-field">
+                                <label for="modalidad">Modalidad de servicios <span class="req">*</span></label>
+                                <select id="modalidad" class="cg-input" required>
+                                    <option value="presencial">Presencial / En Obra</option>
+                                    <option value="remoto">Remoto / Planos</option>
+                                    <option value="hibrido" selected>Híbrido</option>
+                                    <option value="consultoria">Consultoría Técnica</option>
+                                </select>
+                            </div>
+                            <div class="cg-field">
+                                <label for="disponibilidad">Disponibilidad actual <span class="req">*</span></label>
+                                <div class="cg-switch-row">
+                                    <label class="cg-switch">
+                                        <input type="checkbox" id="disponibilidad" checked>
+                                        <span class="cg-switch__slider"></span>
+                                    </label>
+                                    <span class="cg-switch-text" id="disponibilidad-label">Disponible</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cg-field">
+                            <label for="tag-input">Tags SEO (prefijo #) <span class="req">*</span></label>
+                            <div class="cg-tags-box" id="cg-tags-box">
+                                <span class="cg-seo-tag">#IngenieriaCivil <button type="button" aria-label="Quitar">&times;</button></span>
+                                <span class="cg-seo-tag">#Estructuras <button type="button" aria-label="Quitar">&times;</button></span>
+                                <span class="cg-seo-tag">#ObraGris <button type="button" aria-label="Quitar">&times;</button></span>
+                                <input type="text" id="tag-input" class="cg-tags-input" placeholder="Añadir #tag + Enter">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ==================== COLUMNA 3: UBICACIÓN, CONTACTO Y PORTAFOLIO ==================== -->
+                    <section class="cg-reg-card">
+                        <h2 class="cg-reg-card__title">Ubicación y Contacto</h2>
+
+                        <div class="cg-field-row cg-field-row--2">
+                            <div class="cg-field">
+                                <label for="pais">País <span class="req">*</span></label>
+                                <select id="pais" class="cg-input" required>
+                                    <option value="Venezuela" selected>Venezuela</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Panama">Panamá</option>
+                                </select>
+                            </div>
+                            <div class="cg-field">
+                                <label for="estado">Estado / Región <span class="req">*</span></label>
+                                <select id="estado" class="cg-input" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="Distrito Capital" selected>Distrito Capital</option>
+                                    <option value="Miranda">Miranda</option>
+                                    <option value="Carabobo">Carabobo</option>
+                                    <option value="Zulia">Zulia</option>
+                                    <option value="Bolivar">Bolívar</option>
+                                    <option value="Lara">Lara</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="cg-field">
+                            <label for="ciudad-municipio">Ciudad / Municipio <span class="req">*</span></label>
+                            <select id="ciudad-municipio" class="cg-input" required>
+                                <option value="solo-ciudad" selected>Zonas de cobertura (Solo su ciudad)</option>
+                                <option value="chacao">Caracas - Chacao</option>
+                                <option value="baruta">Caracas - Baruta</option>
+                                <option value="sucre">Caracas - Sucre</option>
+                                <option value="libertador">Caracas - Libertador</option>
+                                <option value="nacional">Cobertura Nacional</option>
+                            </select>
+                        </div>
+
+                        <div class="cg-field">
+                            <label for="direccion">Dirección comercial o de oficina</label>
+                            <input type="text" id="direccion" class="cg-input" placeholder="Av. Principal, Edif. / Oficina...">
+                        </div>
+
+                        <div class="cg-field">
+                            <label>Preferencia de contacto</label>
+                            <div class="cg-segmented cg-segmented--4" data-segmented="pref-contacto">
+                                <button type="button" class="cg-seg-btn active" data-value="WhatsApp">WhatsApp</button>
+                                <button type="button" class="cg-seg-btn" data-value="Llamada">Llamada</button>
+                                <button type="button" class="cg-seg-btn" data-value="Correo">Correo</button>
+                                <button type="button" class="cg-seg-btn" data-value="Formulario">Formulario</button>
+                            </div>
+                            <input type="hidden" id="pref-contacto" value="WhatsApp">
+                        </div>
+
+                        <!-- Redes sociales interactivas -->
+                        <div class="cg-socials-strip">
+                            <button type="button" class="cg-social-chip" data-social="instagram">
+                                <i class="fa fa-instagram"></i> Instagram
+                            </button>
+                            <button type="button" class="cg-social-chip" data-social="tiktok">
+                                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298 0 .593.046.875.138V9.4a6.34 6.34 0 0 0-1-.08A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
+                                TikTok
+                            </button>
+                            <button type="button" class="cg-social-chip" data-social="youtube">
+                                <i class="fa fa-youtube-play"></i> YouTube
+                            </button>
+                            <button type="button" class="cg-social-chip" data-social="linkedin">
+                                <i class="fa fa-linkedin-square"></i> LinkedIn
+                            </button>
+                        </div>
+                        <div class="cg-social-input-wrap" id="cg-social-input-wrap" hidden>
+                            <input type="url" id="cg-social-url" class="cg-input" placeholder="https://instagram.com/tuusuario">
+                        </div>
+
+                        <hr class="cg-divider">
+
+                        <!-- PORTAFOLIO DE OBRAS -->
+                        <h3 class="cg-reg-card__subtitle">Portafolio de Obras <span>(Antes / Después)</span></h3>
+
+                        <!-- Proyecto 1 -->
+                        <div class="cg-project-block">
+                            <label for="proy-1-titulo">Proyecto 1 <span class="req">*</span></label>
+                            <div class="cg-project-row">
+                                <input type="text" id="proy-1-titulo" class="cg-input" placeholder="Título del proyecto" required>
+                                <label class="cg-mini-upload" for="proy-1-antes">
+                                    <input type="file" id="proy-1-antes" accept=".jpg,.jpeg,.png" hidden>
+                                    <img class="cg-mini-preview" alt="Antes" hidden>
+                                    <span class="cg-mini-placeholder"><i class="fa fa-camera"></i><span>Foto Antes</span></span>
+                                </label>
+                                <label class="cg-mini-upload" for="proy-1-despues">
+                                    <input type="file" id="proy-1-despues" accept=".jpg,.jpeg,.png" hidden>
+                                    <img class="cg-mini-preview" alt="Después" hidden>
+                                    <span class="cg-mini-placeholder"><i class="fa fa-camera"></i><span>Foto Después</span></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto 2 -->
+                        <div class="cg-project-block">
+                            <label for="proy-2-titulo">Proyecto 2 <span class="req">*</span></label>
+                            <div class="cg-project-row">
+                                <input type="text" id="proy-2-titulo" class="cg-input" placeholder="Título del proyecto">
+                                <label class="cg-mini-upload" for="proy-2-antes">
+                                    <input type="file" id="proy-2-antes" accept=".jpg,.jpeg,.png" hidden>
+                                    <img class="cg-mini-preview" alt="Antes" hidden>
+                                    <span class="cg-mini-placeholder"><i class="fa fa-camera"></i><span>Foto Antes</span></span>
+                                </label>
+                                <label class="cg-mini-upload" for="proy-2-despues">
+                                    <input type="file" id="proy-2-despues" accept=".jpg,.jpeg,.png" hidden>
+                                    <img class="cg-mini-preview" alt="Después" hidden>
+                                    <span class="cg-mini-placeholder"><i class="fa fa-camera"></i><span>Foto Después</span></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Aceptación de términos -->
+                        <label class="cg-terms-check" for="acepta-terminos">
+                            <input type="checkbox" id="acepta-terminos" required>
+                            <span>Aceptación de términos, veracidad de la información y privacidad <strong>(Obligatorio)</strong></span>
+                        </label>
+
+                        <!-- Botón CTA principal -->
+                        <button type="submit" class="cg-reg-submit">Registrar y Publicar Perfil</button>
+                    </section>
+
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="/js/registro-natural.js"></script>
+</body>
+
+</html>

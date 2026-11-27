@@ -1,0 +1,246 @@
+/* Centrado vertical y espaciado limpio */
+.ps-login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 15px;
+    background-color: #f1f1f1;
+}
+
+.ps-login-box {
+    max-width: 460px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+/* Logo superior */
+.ps-login-logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.ps-login-logo img {
+    max-height: 44px;
+}
+
+.ps-login-logo__fallback {
+    display: none;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -0.5px;
+}
+
+.ps-login-logo__fallback span {
+    color: #fcb800;
+}
+
+/* Tarjeta y pestañas */
+.ps-login-box .ps-tab-list {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.ps-login-box .ps-tab-list li a {
+    font-size: 24px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid transparent;
+}
+
+.ps-login-box .ps-tab-list li.active a {
+    color: #000;
+    border-bottom-color: #fcb800;
+}
+
+.ps-login-box .ps-tab {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.ps-login-box .ps-form__content {
+    padding: 35px 35px 15px;
+    text-align: center;
+}
+
+.ps-login-box .ps-form__content h5 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.ps-login-box .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.ps-login-box .form-group > label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+    text-align: center;
+}
+
+/* Todos los rectángulos exactamente del mismo tamaño y texto centrado */
+.ps-login-box .form-control {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    height: 46px;
+    padding: 0 44px;
+    border-radius: 3px;
+    border: 1px solid #dddddd;
+    font-size: 14px;
+    text-align: center;
+}
+
+.ps-login-box .form-control::placeholder {
+    text-align: center;
+}
+
+.ps-login-box .form-control:focus {
+    border-color: #fcb800;
+}
+
+/* Campo de contraseña con ojito dentro del rectángulo */
+.ps-password-field {
+    position: relative;
+    width: 100%;
+}
+
+.ps-toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.25s ease;
+    z-index: 2;
+}
+
+.ps-toggle-password:hover {
+    color: #000;
+}
+
+.ps-toggle-password.is-visible {
+    color: #fcb800;
+}
+
+/* Fila de Recuérdame + ¿Se te olvidó la contraseña? */
+.ps-login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.ps-login-options .ps-checkbox {
+    text-align: left;
+}
+
+.ps-login-options .ps-checkbox label {
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+}
+
+.ps-forgot-link,
+.ps-switch-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #06c;
+}
+
+.ps-forgot-link:hover,
+.ps-switch-link:hover {
+    color: #fcb800;
+    text-decoration: underline;
+}
+
+.ps-forgot-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Botón principal */
+.ps-login-box .ps-btn--fullwidth {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Pie de tarjeta */
+.ps-login-footer {
+    padding: 18px 35px;
+    border-top: 1px solid #efefef;
+    background-color: #fafafa;
+    text-align: center;
+    border-radius: 0 0 4px 4px;
+}
+
+.ps-login-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Alerta visual de demostración */
+.ps-auth-feedback {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.ps-auth-feedback.is-success {
+    display: block;
+    background-color: #eff4e5;
+    color: #4f7700;
+    border: 1px solid #cde0a8;
+}
+
+.ps-auth-feedback.is-error {
+    display: block;
+    background-color: #fdecea;
+    color: #c62828;
+    border: 1px solid #f5c2c0;
+}
+
+@media (max-width: 479px) {
+    .ps-login-box .ps-form__content {
+        padding: 25px 20px 10px;
+    }
+
+    .ps-login-footer {
+        padding: 16px 20px;
+    }
+
+    .ps-login-box .ps-tab-list li a {
+        font-size: 20px;
+    }
+}

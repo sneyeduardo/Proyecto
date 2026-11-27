@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+
+    <!-- Fuentes e íconos globales -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/plugins/bootstrap4/css/bootstrap.min.css">
+
+    <!-- CSS global de ConstruGuía -->
+    <link rel="stylesheet" href="/css/construguia-theme.css">
+    <link rel="stylesheet" href="/css/cg-filters-megamenu.css">
+
+    <!-- CSS exclusivo de esta vista (opcional) -->
+    {{#if pageCss}}
+    <link rel="stylesheet" href="{{pageCss}}">
+    {{/if}}
+</head>
+
+<body>
+
+    {{> header}}
+
+    {{{body}}}
+
+    {{#unless hideFooter}}
+    {{> footer}}
+    {{/unless}}
+
+    {{#unless hidePino}}
+    {{> pino}}
+    {{/unless}}
+
+    <!-- JS global (menú móvil, boletín, botón subir y Pino IA) -->
+    <script src="/js/construguia-global.js"></script>
+    <script src="/js/cg-filters-megamenu.js"></script>
+
+    <!-- JS exclusivo de esta vista (opcional) -->
+    {{#if pageJs}}
+    <script src="{{pageJs}}"></script>
+    {{/if}}
+</body>
+
+</html>

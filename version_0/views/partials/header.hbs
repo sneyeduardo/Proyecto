@@ -1,0 +1,239 @@
+<header class="cg-header">
+    <div class="cg-header__top">
+        <div class="cg-container cg-header__top-inner">
+
+            <!-- Logo ConstruGuía -->
+            <a href="/" class="cg-logo" aria-label="ConstruGuía Inicio">
+                <span class="cg-logo__mark">
+                    <svg viewBox="0 0 46 38" width="44" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 5C11.6 5 4 11.3 4 19C4 26.7 11.6 33 21 33C29.1 33 35.9 28.1 37.5 21.5H20V15.5H43.5C43.8 16.6 44 17.8 44 19C44 29.5 33.7 38 21 38C8.3 38 0 29.5 0 19C0 8.5 8.3 0 21 0C29.4 0 36.7 3.7 40.7 9.4L34.3 12.6C31.5 8.1 26.6 5 21 5Z" fill="#070B57"/>
+                        <path d="M22 15.5H43.5L41.5 21.5H22V15.5Z" fill="#E61919"/>
+                    </svg>
+                </span>
+                <span class="cg-logo__text">
+                    <span class="cg-logo__title"><strong>constru</strong><em>guía</em></span>
+                    <small class="cg-logo__subtitle">LA GUÍA DE LA CONSTRUCCIÓN EN VENEZUELA</small>
+                </span>
+            </a>
+
+            <!-- Buscador principal -->
+            <form class="cg-search" id="cg-search-form" action="/" method="get">
+                <select class="cg-search__select" id="cg-search-scope" aria-label="Categoría de búsqueda">
+                    <option value="">Todo</option>
+                    <option value="materiales">Materiales</option>
+                    <option value="ferreteria">Ferretería</option>
+                    <option value="maquinaria">Maquinaria</option>
+                    <option value="acabados">Acabados</option>
+                </select>
+                <input type="text" class="cg-search__input" id="cg-search-input" placeholder="Buscar en ConstruGuía...">
+                <button type="submit" class="cg-search__btn">Buscar</button>
+            </form>
+
+            <!-- Acciones de usuario -->
+            <div class="cg-header__actions">
+                <a href="#" class="cg-action-item" title="Notificaciones">
+                    <span class="cg-action-icon">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="cg-badge-count cg-badge-count--red">2</span>
+                    </span>
+                    <span class="cg-action-label">Notificaciones</span>
+                </a>
+                <a href="#" class="cg-action-item" title="Comparar">
+                    <span class="cg-action-icon">
+                        <i class="fa fa-bar-chart"></i>
+                        <span class="cg-badge-count">0</span>
+                    </span>
+                    <span class="cg-action-label">Comparar</span>
+                </a>
+                <a href="#" class="cg-action-item" title="Favoritos">
+                    <span class="cg-action-icon">
+                        <i class="fa fa-heart-o"></i>
+                        <span class="cg-badge-count">3</span>
+                    </span>
+                    <span class="cg-action-label">Favoritos</span>
+                </a>
+                <a href="/shopping-cart.html" class="cg-action-item" title="Carrito">
+                    <span class="cg-action-icon">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="cg-badge-count cg-badge-count--red">2</span>
+                    </span>
+                    <span class="cg-action-label">Carrito</span>
+                </a>
+                <a href="/login" class="cg-action-auth">
+                    <i class="fa fa-user-o"></i>
+                    <span>Ingresar /<br>Registrarse</span>
+                </a>
+
+                <button type="button" class="cg-mobile-toggle" id="cg-mobile-toggle" aria-label="Abrir menú">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Barra de navegación -->
+    <nav class="cg-nav" id="cg-nav">
+        <div class="cg-container cg-nav__inner">
+            <div class="cg-nav__left">
+                <div class="cg-dept-dropdown">
+                    <button type="button" class="cg-dept-btn">
+                        <i class="fa fa-bars"></i>
+                        <span>Buscar por Categoría</span>
+                    </button>
+                    <ul class="cg-dept-menu">
+                        <li><a href="/" data-quick-cat="materiales"><i class="fa fa-cubes"></i> Productos y Materiales</a></li>
+                        <li><a href="/" data-quick-cat="ferreteria"><i class="fa fa-wrench"></i> Ferretería y EPP</a></li>
+                        <li><a href="/" data-quick-cat="maquinaria"><i class="fa fa-cogs"></i> Alquiler de Maquinaria</a></li>
+                        <li><a href="/" data-quick-cat="acabados"><i class="fa fa-paint-brush"></i> Acabados y Sanitarios</a></li>
+                        <li><a href="/" data-quick-cat=""><i class="fa fa-th-large"></i> Ver todo el catálogo</a></li>
+                    </ul>
+                </div>
+
+                <ul class="cg-nav__links">
+                    <li><a href="/" class="{{#if isHome}}active{{/if}}">Inicio</a></li>
+                    <li class="cg-has-submenu">
+                        <a href="#" class="{{#if isDirectorio}}active{{/if}}">Directorio <i class="fa fa-angle-down"></i></a>
+                        <ul class="cg-submenu">
+                            <li><a href="/Registro_Natural">Registro Persona Natural</a></li>
+                            <li><a href="#">Proveedores Verificados</a></li>
+                            <li><a href="#">Ingenieros y Contratistas</a></li>
+                            <li><a href="#">Ferreterías y Mayoristas</a></li>
+                        </ul>
+                    </li>
+                    <li class="cg-has-submenu">
+                        <a href="#">Páginas <i class="fa fa-angle-down"></i></a>
+                        <ul class="cg-submenu">
+                            <li><a href="/about-us.html">Nosotros</a></li>
+                            <li><a href="/contact-us.html">Contacto</a></li>
+                            <li><a href="/faqs.html">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/blog-grid.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="cg-nav__right">
+                <a href="/become-a-vendor.html">Vende en ConstruGuía</a>
+                <span class="cg-sep">|</span>
+                <a href="/order-tracking.html">Rastrea tu pedido</a>
+                <span class="cg-sep">|</span>
+                <span class="cg-nav__meta">Bolívar (VES)</span>
+                <span class="cg-sep">|</span>
+                <a href="#" class="cg-nav__lang">Español <i class="fa fa-angle-down"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Barra de filtros avanzados -->
+    <!-- Barra de filtros avanzados con Mega-Menú -->
+    {{#unless hideFilters}}
+    <div class="cg-filter-bar" id="cg-filter-bar">
+        <div class="cg-container cg-filter-container">
+            <form class="cg-filter-form" id="cg-filter-form" action="/" method="get">
+
+                <!-- Inputs ocultos (compatibles con construguia-home.js) -->
+                <input type="hidden" id="filter-categoria" value="">
+                <input type="hidden" id="filter-subcategoria" value="">
+                <input type="hidden" id="filter-ciudad" value="">
+                <input type="hidden" id="filter-municipio" value="">
+                <input type="hidden" id="filter-precio" value="">
+
+                <!-- 1. Categoría (dispara Mega-Menú) -->
+                <div class="cg-dd-wrap">
+                    <button type="button" class="cg-filter-trigger" data-dd-trigger="categoria" aria-expanded="false">
+                        <span class="cg-trigger-label" data-default="Categoría">Categoría</span>
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                </div>
+
+                <!-- 2. Subcategoría -->
+                <div class="cg-dd-wrap">
+                    <button type="button" class="cg-filter-trigger" data-dd-trigger="subcategoria" aria-expanded="false">
+                        <span class="cg-trigger-label" data-default="Subcategoría">Subcategoría</span>
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                    <div class="cg-dd-popover cg-dd-popover--wide" data-dd-panel="subcategoria" hidden>
+                        <div class="cg-dd-popover__header" id="cg-subcat-title">Subcategorías destacadas</div>
+                        <div class="cg-dd-popover__list" id="cg-subcat-list"></div>
+                    </div>
+                </div>
+
+                <!-- 3. Ciudad -->
+                <div class="cg-dd-wrap">
+                    <button type="button" class="cg-filter-trigger" data-dd-trigger="ciudad" aria-expanded="false">
+                        <span class="cg-trigger-label" data-default="Ciudad">Ciudad</span>
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                    <div class="cg-dd-popover" data-dd-panel="ciudad" hidden>
+                        <div class="cg-dd-popover__header">Selecciona una Ciudad</div>
+                        <div class="cg-dd-popover__list" id="cg-ciudad-list"></div>
+                    </div>
+                </div>
+
+                <!-- 4. Municipio -->
+                <div class="cg-dd-wrap">
+                    <button type="button" class="cg-filter-trigger" data-dd-trigger="municipio" aria-expanded="false">
+                        <span class="cg-trigger-label" data-default="Municipio">Municipio</span>
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                    <div class="cg-dd-popover" data-dd-panel="municipio" hidden>
+                        <div class="cg-dd-popover__header" id="cg-municipio-title">Selecciona un Municipio</div>
+                        <div class="cg-dd-popover__list" id="cg-municipio-list"></div>
+                    </div>
+                </div>
+
+                <!-- 5. Precio -->
+                <div class="cg-dd-wrap">
+                    <button type="button" class="cg-filter-trigger" data-dd-trigger="precio" aria-expanded="false">
+                        <span class="cg-trigger-label" data-default="Precio">Precio</span>
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                    <div class="cg-dd-popover cg-dd-popover--price" data-dd-panel="precio" hidden>
+                        <div class="cg-dd-popover__header">Rango de Precio (USD)</div>
+                        <div class="cg-dd-popover__list" id="cg-precio-list"></div>
+                        <div class="cg-price-custom">
+                            <input type="number" id="cg-price-min" placeholder="Mín $" min="0">
+                            <span>—</span>
+                            <input type="number" id="cg-price-max" placeholder="Máx $" min="0">
+                            <button type="button" id="cg-price-apply">OK</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones Aplicar y Limpiar -->
+                <div class="cg-filter-actions">
+                    <button type="submit" class="cg-btn-filter">
+                        <i class="fa fa-search"></i> Aplicar Filtros
+                    </button>
+                    <button type="button" class="cg-btn-clear" id="btn-clear-filters">
+                        <i class="fa fa-trash-o"></i> Limpiar
+                    </button>
+                </div>
+            </form>
+
+            <!-- ==================== MEGA-MENÚ DE CATEGORÍAS ==================== -->
+            <div class="cg-megamenu" data-dd-panel="categoria" id="cg-megamenu" hidden>
+                <div class="cg-megamenu__sidebar" id="cg-megamenu-sidebar">
+                    <!-- Se llena dinámicamente con las 10 categorías -->
+                </div>
+                <div class="cg-megamenu__content">
+                    <div class="cg-megamenu__groups" id="cg-megamenu-groups">
+                        <!-- Se llena dinámicamente según la categoría activa -->
+                    </div>
+                    <div class="cg-megamenu__footer">
+                        <button type="button" class="cg-mm-btn-all" id="cg-mm-btn-all">
+                            <span>Ver todos en Acero y Estructuras</span>
+                            <i class="fa fa-external-link"></i>
+                        </button>
+                        <button type="button" class="cg-mm-btn-apply" id="cg-mm-btn-apply">
+                            Filtrar subcategoría seleccionada
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{/unless}}
+</header>
